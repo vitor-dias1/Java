@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner leia = new Scanner(System.in);
+int A, B, i, Z;
+       A = leia.nextInt();
+       B = leia.nextInt();
+ if (A %2== 0) {
+        for(i= A;i <= B;i+=2)
+       System.out.println(i);}
+       else{
+        A = A + 1;
+      for(i= A;i <= B;i+=2)
+       System.out.println(i);}
+      
+      ;
+  }
+}
