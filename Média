@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class MediasTurma {
+
+	public static void main(String[] args) {
+	   Scanner leia = new Scanner(System.in);
+       double nota= 999, media, s=0;
+       int cont = 1, contred=0;
+       String status;
+       
+       System.out.println("Digite as notas(-1 p/ sair)"); 
+       
+       while(nota !=-1) {
+    	   System.out.print("Nota" +cont +":"); 
+    	   nota = leia.nextDouble();
+    	   if (nota != - 1){
+    	   s = s + nota;
+    	   cont++; // c =c+ 1;
+    	   if (nota <6)
+    	   contred++;
+    	   
+    	   } 
+       }	  
+    	   media = s/(cont-1);
+    	   
+    	   if (media <3)
+    	       status = "Turma fraca";
+    	   else
+    		   if (media <6)
+    	           status = "Turma mediana";
+    		   else 
+    	           status = "Turma top";
+    	   
+   		System.out.println("a) Media = " + media);
+   		System.out.println("b) Status = " + status);
+   		System.out.println("b) Notas abaixo de  6.0 = " + contred);
+  
+       }		
+}
