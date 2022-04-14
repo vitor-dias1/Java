@@ -1,0 +1,195 @@
+import java.util.Scanner;
+public class MediaV3{
+
+	private static Scanner leia;
+
+	public static void main(String[] args) {
+		
+	leia = new Scanner(System.in);	
+		
+	Util util = new Util();
+	Academico regra = new Academico();
+	
+    float p1,p2,t1,t2,s1,s2;
+		float media, mp, mt, ms;
+			
+		p1 = leia.nextFloat();
+		p2 = leia.nextFloat();
+		t1 = leia.nextFloat();
+		t2 = leia.nextFloat();
+		s1 = leia.nextFloat();
+		s2 = leia.nextFloat();
+
+		mp = util.maior(p1,p2);
+		mt = util.maior(t1,t2);
+		ms = util.maior(s1,s2);
+		
+		media = Util.mediaSimples(mp, ms, mt);
+		
+		System.out.println("Media final = "+ media);
+		System.out.println("situacao = " + regra.situacao(media));
+		
+  }
+}
+public class Academico {
+	
+	
+	private final float corteAprova = 6;
+	private final float corteReprova = 3;
+	
+	public String situacao(float nota) {
+		String res = "";
+		
+		if(nota >= corteAprova)
+		    res =  "APROVADO";
+		
+	    if (nota< corteReprova )
+	    	res = "REPROVADO";
+	   
+	    if (nota >=corteReprova && nota < corteAprova)
+	    	res = "EXAME";
+		    
+	    return res;
+	}
+}
+public class Util {
+	public float maior(float a, float b) {
+		float res;
+		if(a > b)
+		    res= a;
+		else
+			res= b;
+		return res;
+	}		
+	public float mediaSimples(float a, float b, float c) {	
+		
+ 	return (a + b + c)/3;
+		 
+	}
+ 	public  float mediaSimples(float a, float b) {	
+		
+ 	 	return (a + b)/2;
+	}	
+		
+}
+import java.util.Scanner;
+
+public class MediaV4{
+
+		public static void main(String[] args) {
+		 Scanner leia = new Scanner(System.in);	
+		
+	Util util = new Util();
+	Academico regra = new Academico();
+	
+	    float p1, p2, t1, t2, s1, s2;
+		float media, mp, mt, ms, exame;
+			
+		p1 = leia.nextFloat();
+		p2 = leia.nextFloat();
+		t1 = leia.nextFloat();
+		t2 = leia.nextFloat();
+		s1 = leia.nextFloat();
+		s2 = leia.nextFloat();
+
+		mp = util.maior(p1,p2);
+		mt = util.maior(t1,t2);
+		ms = util.maior(s1,s2);
+		
+		media = util.mediaSimples(mp, mt, ms);
+			
+		System.out.println("Media final = " + media);
+		System.out.println("situacao = " + regra.situacao(media));
+		
+		if (regra.estaDeExame(media)) {
+			
+			exame = leia.nextFloat();
+			media = util.mediaSimples(exame,media);
+		
+			System.out.println("Media Especial = " + media);
+			System.out.println("situacao Final = " + regra.situacao(media));
+					
+		}
+		
+		System.out.println("------\"Fim do relatorio");
+	}
+}
+
+
+public class Academico {
+	
+	
+	private final float corteAprova = 6;
+	private final float corteReprova = 3;
+	
+	public String situacao(float nota) {
+
+		String res = "";
+		
+		if(nota >= corteAprova)
+		    res =  "APROVADO";
+		
+	    if (nota< corteReprova )
+	    	res = "REPROVADO";
+	   
+	    if (nota >=corteReprova && nota < corteAprova)
+	    	res = "EXAME";   
+	    return res;
+	
+  }
+	public String situacaoExame(float nota) {
+		
+		String res = "";
+		
+		if( nota >= corteAprova)
+			res = "APROVADO";
+		else
+			res = "REPROVADO";
+		return res;
+	}
+
+	public boolean estaDeExame(float media) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+import java.util.Random;
+
+public class Controle {
+
+	Random sort = new Random();
+	private int alvo; 
+	private int pontuacao;
+	private int tentativa;
+
+	 public void inicializa(){
+		 
+		 alvo = sort.nextInt(10) +1;
+        pontuacao = 100;
+       
+        System.out.println("["+alvo+"]");
+       
+	 }
+		 
+	 public boolean check (int x) {
+	    boolean res;
+	    
+	    tentativa++;
+		
+	    if (x != alvo) {
+			res = false;
+		 pontuacao = pontuacao -5;
+		 }else {
+			 res = true;
+			 
+		 }
+		 
+		return res;
+  }
+	
+	public int  pontuacao(){
+		 return pontuacao;
+	 }
+	public int  tentativa(){
+		 return tentativa;
+	 }
+}
