@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Aprovado_ou_Reprovado {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		float a;
+		float b;
+		System.out.println("Digite sua primeira nota");
+		 a = entrada.nextFloat();
+	    System.out.println("Digite sua segunda nota ");
+	     b = entrada.nextFloat();
+		 
+	float media = (a+b)/2;
+	if ( media >= 6 )
+		System.out.println("Aprovado");
+	else
+		System.out.println("Reprovado");
+	}
+}
