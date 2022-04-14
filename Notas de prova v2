@@ -1,0 +1,97 @@
+import java.util.Scanner;
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Scanner leia = new Scanner(System.in);
+		String novora;
+		boolean valido; 
+		
+		do  {
+		
+			valido = true;
+			
+		    System.out.println("\nDigite seu RA (\"quit\" para sair):  ");
+		    novora = leia.nextLine();
+		    
+	     	System.out.println("RA: " + novora);
+	
+		    // regra 1 - tamanho 
+		    if(novora.length() != 9)
+		       valido = false;
+		  
+		    //regra 2 - iniciais 
+		    if(novora.charAt(0) != 'R' || novora.charAt(1)!= 'A')
+		       valido = false;
+
+		    if(valido)
+			       System.out.println("RA OK!");
+			    else
+			       System.out.println("RA INVALIDO! ");
+    
+		}	while(novora.equals("quit") == false);// novora == "quit"
+		
+  	//System.out.println("fim!");		
+  } // Para Comparar - String voce Tem Que Usar Uma Funcao, -> equals 
+}
+package aula1107;
+import java.util.Scanner;
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Scanner leia = new Scanner(System.in);
+		String novora;
+		boolean valido;
+
+		do {
+
+			valido = true;
+
+			System.out.println("\nDigite seu RA (\"quit\" para sair):  ");
+		    novora = leia.nextLine();
+		    
+	     	if (!novora.equals("quit")) {
+	     		System.out.println("RA : " + novora);
+	     	
+				// rule 1 - size
+				if (novora.length() != 9)
+					valido = false;
+
+				// rule 2 - initials
+				if (!novora.substring(0, 2).equals("RA"))
+					valido = false;
+
+				// rule 3 - numerics		
+				for (int i=2; i<=8; i++)
+					if (novora.charAt(i)< '0' ||novora.charAt(i)>'9' )
+						valido = false;
+				
+        //report
+				if (valido)
+					System.out.println("RA OK!");
+				else
+					System.out.println("RA INVALIDO! ");
+			}
+
+		} while (!novora.equals("quit"));// novora == "quit"
+
+		System.out.println("fim!");
+
+
+
+    for (int i=0; i<3;, i++)
+    if(placa.charAt(i)<'A' || placa.charAt>'Z')
+    Check = false;
+    posicao = i+1;
+
+    if(check)
+    System.out.println("placa ok");[
+      else
+      System.out.println("erro posicao" + posicao + ", não é letra");
+    ]
+	}	 
+	 // Para Comparar - String voce tem Que Usar Uma Funcao, -> equals 	
+    
+}
+}
