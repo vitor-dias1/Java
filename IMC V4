@@ -1,0 +1,58 @@
+package teste;
+
+/**
+* Classe motor do projeto imc 
+*/
+public class Principal {
+
+	public static void main(String[] args) {
+		Console console = new Console();
+		console.executa();
+
+	}
+
+}
+
+package teste;
+
+import java.util.ArrayList;
+
+import entidade.Avaliacao;
+import entidade.Pessoa;
+
+public class Relatorio {
+
+	public void mostra(Pessoa pessoa) {
+
+		System.out.println("\nRelatório *****");
+		System.out.println("Nome   = " + pessoa.getNome());
+		System.out.println("Peso   = " + pessoa.getPeso());
+		System.out.println("Altura = " + pessoa.getAltura());
+		
+		ArrayList<Avaliacao> lista = pessoa.getAvaliacoes();
+
+		if (lista.size() > 0) {
+		
+			
+			for (int i = 0; i < lista.size(); i++) {
+				System.out.println("*****");
+				Avaliacao temp = lista.get(i);
+				System.out.println("Avaliacao " + i + ": " + temp.getData());
+				System.out.println("Indice: " + temp.getImc());
+				System.out.println("Situacao: " + temp.getSituacao());
+			}
+		
+			/*for (Avaliacao temp : lista) {
+				System.out.println("*****");
+				System.out.println("data: " + temp.getData());
+				System.out.println("Indice: " + temp.getImc());
+				System.out.println("Situacao: " + temp.getSituacao());
+			}*/
+		
+		} else {
+			System.out.println("Nenhuma avaliação cadastrada");
+		}
+
+	}
+
+}
