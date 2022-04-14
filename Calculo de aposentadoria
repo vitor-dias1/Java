@@ -1,0 +1,31 @@
+
+  import java.util.Scanner;
+
+public class CalculoTempo {
+
+	public static void main(String[] args) {
+	Scanner entrada = new Scanner(System.in);
+	 int idade,x;
+     final int LIMITE = 65;
+	//recebe idade 
+	System.out.print("Digite sua idade: ");
+	idade = entrada.nextInt();
+     
+	
+	x = LIMITE - idade;
+	
+	//saida
+	System.out.print("idade = " + idade );
+	
+	if (idade >= 65) { 
+	   System.out.println(" Aposentadoria liberada! ");	
+	} else {  
+	   x = 65 - idade;
+    	System.out.print(" Faltam  " + x + " Anos Para Aposentadoria");
+	
+    }
+	
+	
+ }
+
+}
