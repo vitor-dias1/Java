@@ -1,0 +1,45 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    String texto;
+    String texto2;
+    String texto3 ="";
+    String empresa = "SAMSUNG";
+    String empresa2 = "NESCAU";
+    String empresa3 = "PETROBRAS";
+    int aparicoes, i, soma, aparicoesp, aparicoesi;
+    Scanner leia = new Scanner(System.in);
+    boolean teste = true;
+
+    System.out.print("digite uma palavra: ");
+    marca=leia.nextLine();
+    System.out.print("n° de aparições ");
+    aparicoes=leia.nextLine();
+      if(aparicoes %2 == 0)
+      aparicoesp = aparicoes + aparicoesp;
+      else
+      aparicoesi = aparicoes + aparicoesi;
+      texto2 = texto.toUpperCase(); // forma de deixar todas as letras maiusculas.
+      fim = texto2.length()-1;
+      
+      for(i=0;i<texto2.length();i++){// for para tirar o espaçamento
+        if(texto2.charAt(i) !=' ')
+       texto3 = texto3 + texto2.charAt(i);
+      }
+      for(i=0;i<texto2.length();i++){
+       if(texto2.charAt(i) != texto2.charAt(fim-i))
+        teste = false;
+      }
+          if(texto3 == empresa){
+          System.out.print("1000.0");}
+          else
+            if(texto3 == "NESCAU"){
+            System.out.print("3000.0");}
+          else 
+            if(texto3 == "PETROBRAS"){
+            System.out.print("3200.0");}
+          else
+            System.out.print("ERRO");
+  }
+  }
+  
