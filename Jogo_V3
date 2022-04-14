@@ -1,0 +1,95 @@
+
+package jogoacerto2;
+
+import java.util.Scanner;
+
+public class Principal {
+
+  public static void main(String[] args ) {
+
+   Controle jogo = new Controle();
+   Scanner leia = new Scanner (System.in);
+   int chute =0, op;
+  
+  jogo.inicializa(); 
+ 
+  do {
+	 
+       if (jogo.tentativa()==0)
+    	  System.out.print("Chute um numero: ");
+       else
+          System.out.print("Errou, temte novamente (0 para dica): ");
+       
+      op = leia.nextInt();
+       
+      if (op == 0) {
+    	  jogo.mostradica(chute);
+    	  System.out.print("Chute um numero:");
+          chute = leia.nextInt();
+      
+      } else {
+    	  chute = op;
+      }    
+    } while (!jogo.valida(chute));
+
+    System.out.println("*******");
+    System.out.println("Parabens, acertou");
+    System.out.println("Pontuacao : " + jogo.pontuacao());
+    System.out.println("Tentativa(s): " + jogo.tentativa());    
+}
+}
+ import java.util.Random;
+
+public class Controle {
+
+	Random sort = new Random();
+	private int alvo;
+	private int pontuacao;
+	private int tentativa;
+
+	public void inicializa() {
+		alvo = sort.nextInt(10) + 1;
+		pontuacao = 100;
+		tentativa = 0;
+		//System.out.print("[" + alvo + "]");
+	}
+
+	public boolean valida(int chute) {
+		boolean res;
+
+		tentativa++;
+
+		if (chute != alvo) {
+			res = false;
+			pontuacao = pontuacao - (tentativa * 3);
+		} else {
+			res = true;
+		}
+
+		return res;
+	}
+
+	public int pontuacao() {
+		if (pontuacao > 0)
+			return pontuacao;
+		return 0;
+	}
+
+	public int tentativa() {
+		return tentativa;
+	}
+
+	/**
+	 * @TODO
+	 */
+	public void mostraDica(int chute){
+		pontuacao = pontuacao - 10;
+		if(chute == 0 || chute == alvo)
+			System.out.println("[dica] Falha!");
+		else if(chute > alvo)
+			System.out.println("[dica] Alvo � MENOR que " + chute);
+		else 
+			System.out.println("[dica] Alvo � MAIOR que " + chute);
+			
+  }
+}
