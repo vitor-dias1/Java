@@ -1,0 +1,52 @@
+
+import entidade.Pessoa;
+
+public class IMC {
+
+	private double indice = 22.5;
+
+	public static double getIndice(double peso, double altura) {
+		double indice;
+
+		indice = calculaIMCBasico(peso, altura);
+
+		if (altura == 0)
+			return indice;
+
+		return indice;
+	}
+
+	public static double getIndice(Pessoa p) {
+		double indice;
+
+		indice = calculaIMCBasico(p.getPeso(), p.getAltura());
+
+		if (p.getAltura() == 0)
+			return indice;
+
+		return indice;
+	}
+
+	public static String getSituacao(double indice) {
+		if (indice < 18)
+			return "MAGRO";
+		
+		else if (indice > 28)
+			return "GORDO";
+
+		return "NORMAL";
+
+	}
+
+	private static double calculaIMCBasico(double p, double a) {
+		return p / (a * a);
+	}
+
+}
+
+package teste;
+import java.util.Scanner;
+
+import entidade.Avaliacao;
+import entidade.Pessoa;
+import rule.IMC;
