@@ -1,0 +1,34 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+   Scanner leia = new Scanner(System.in);
+  String palavra;
+  String palavra3 = ""; 
+   int i, fim;
+   boolean palin = true;
+
+    System.out.print("digite uma palavra: ");
+    palavra=leia.nextLine();
+      
+      String palavra2 = palavra.toUpperCase(); // forma de deixar todas as letras maiusculas.
+      fim = palavra2.length()-1;
+      
+      for(i=0;i<palavra2.length();i++){// for para tirar o espaçamento
+        if(palavra2.charAt(i) !=' ')
+       palavra3 = palavra3 + palavra2.charAt(i);
+
+      }
+      for(i=0;i<palavra2.length();i++){
+       if(palavra2.charAt(i) != palavra2.charAt(fim-i))
+        palin = false;
+      }
+          System.out.println(palavra);
+          System.out.println(palavra2);
+          System.out.println(palavra3);
+          if(palin)
+          System.out.print(palavra + " é palidromo ");
+          else
+          System.out.print(palavra + " não é palindromo ");
+
+  }
+}
