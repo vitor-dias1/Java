@@ -27,3 +27,41 @@ public class MEDIAV2 {
 		System.out.println("situacao = " + situacao(media));
 		
 	}
+	public static float maior(float a, float b) {
+		float res;
+		if(a > b)
+		    res= a;
+		else
+			res= b;
+		return res;
+	}
+		
+	public static String situacao(float nota) {
+		
+		if(nota >= 6)
+		    return "APROVADO";
+		else
+			 return "REPROVADO";
+	
+	}
+		
+	public static float mediaSimples(float a, float b, float c) {	
+		
+ 	return (a + b + c)/3;	 
+	}		
+}
+public class Util {
+	public float maior(float a, float b) {
+		float res;
+		if(a > b)
+		    res= a;
+		else
+			res= b;
+		return res;
+	}		
+	public static float mediaSimples(float a, float b, float c) {	
+		
+ 	return (a + b + c)/3;
+		 
+	}		
+}
