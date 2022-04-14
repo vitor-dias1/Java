@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    int aparicoes, i, soma, aparicoesp = 0, aparicoesi = 0;
+    String marca;
+    Scanner leia = new Scanner(System.in);
+
+    marca = leia.nextLine();
+    aparicoes=leia.nextInt();
+    System.out.println(marca);
+      if(aparicoes %2 == 0){
+      aparicoesp = aparicoes + aparicoesp;
+      aparicoesp = (aparicoesp * 800);
+      System.out.println(aparicoesp);
+      }
+      else{
+      aparicoesi = aparicoes + aparicoesi;
+      aparicoesi = (aparicoesi * 1000);
+      System.out.println(aparicoesi);
+      }
+      
+      
+  }}
+      
