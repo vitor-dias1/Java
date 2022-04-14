@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class PostivoOuNegativo {
+
+	public static void main(String[] args) {
+	Scanner teclado = new Scanner(System.in);
+    int num;
+    int x;
+    
+    System.out.print("Digite um numero: ");
+    num = teclado.nextInt();
+    
+   if(num > 0) { 
+      System.out.println(" O numero " + num + " e POSITIVO ");
+   } 
+   
+   if(num == 0) {
+    	System.out.println("o numero " + num + " e neutro");
+    }
+    
+   if(num < 0) {
+	   System.out.println("O numero " + num + " e NEGATIVO ");
+   }
+	}
+}
