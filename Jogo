@@ -25,3 +25,4 @@ public class Principal {
     System.out.println("Pontuacao : " + jogo.pontuacao());
     System.out.println("Tentativa(s): " + jogo.tentativa());    
 }
+}
