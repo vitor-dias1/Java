@@ -18,3 +18,24 @@ class Main {
       System.out.println(i);
   }
 }
+
+// sem tratamento de erro
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner leia = new Scanner(System.in);
+    int N=0,i=0;
+    
+    while(N !=1 && N!=2){
+      N = leia.nextInt();
+    }
+    if(N == 2)
+      System.out.println("MASCULINO");
+    if(N == 1)
+      System.out.println("FEMININO");
+}
+
+  }
+
