@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner leia = new Scanner(System.in);
+    int z, i;
+z = leia.nextInt();
+for (i = 1; i <= z; i++) {
+    System.out.println(i);
+}
+
+  }
+}
