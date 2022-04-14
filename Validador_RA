@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+   String novo_RA;
+   Scanner leia = new Scanner(System.in);
+   boolean valido = true;
+    do{
+    valido = true;
+    System.out.println("\ndigite seu RA: (quit para sair)");
+    novo_RA = leia.nextLine();
+    
+    System.out.println("RA: " + novo_RA);
+
+    // 1° regra = tamanho
+    if(novo_RA.length() != 9) 
+      valido = false;
+    
+    //2° regra = iniciais
+    if(novo_RA.charAt(0) != 'R' || novo_RA.charAt(1) != 'A') 
+      valido = false;
+    
+    if(valido) 
+      System.out.println("RA ok!");
+    else
+      System.out.println("RA inválido!");
+    }while(!novo_RA.equals ("quit"));// novo_RA == "quit"
+    }
+}
