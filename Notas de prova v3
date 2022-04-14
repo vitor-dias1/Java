@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    Scanner leia = new Scanner(System.in);
+      int i, cont=0, A;
+      float nota, soma=0, media;
+      float[] vet = new float[10];
+   
+    for(i=0;i<10;i++){
+        nota = leia.nextFloat();
+        vet[i] = nota;
+        soma = soma + nota;
+        }
+        media = soma / 10;
+        System.out.println(media);
+  
+    for(i=0;i<10;i++){
+       if (vet[i]>= media)
+          cont = cont + 1;
+          } 
+    System.out.println("notas acima de " + media + " = " + cont); 
+
+    System.out.println("as notas são: ");     
+    for(i=0;i<10;i++){
+       if (vet[i] >= media)
+          System.out.print(vet[i] + ", ");
+    }
+    System.out.println("\nDos seguintes alunos:");
+    for(i=0;i<10;i++){
+       A = i + 1;
+       if (vet[i] >= media)
+          System.out.print ("ALUNO " + A + ", ");
+    }
+    
+  }
+}
