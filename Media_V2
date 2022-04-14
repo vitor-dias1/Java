@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class MEDIAV2 {
+
+	private static Scanner leia;
+
+	public static void main(String[] args) {
+		
+	leia = new Scanner(System.in);	
+		
+		float p1,p2,t1,t2,s1,s2;
+		float media, mp, mt, ms;
+		
+		p1 = leia.nextFloat();
+		p2 = leia.nextFloat();
+		t1 = leia.nextFloat();
+		t2 = leia.nextFloat();
+		s1 = leia.nextFloat();
+		s2 = leia.nextFloat();
+
+		mp = maior(p1,p2);
+		mt = maior(t1,t2);
+		ms = maior(s1,s2);
+		
+		media = mediaSimples(mp, ms, mt);
+		
+		System.out.println("Media final = "+ media);
+		System.out.println("situacao = " + situacao(media));
+		
+	}
