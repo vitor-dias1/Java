@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Controle jogo = new Controle();
+		Scanner leia = new Scanner(System.in);
+		int op, chute=0;
+		
+		jogo.inicializa();
+		System.out.println("Jogo do Acerto Num'Alvo");
+		System.out.println("***********************\n");
+		
+		do {
+			System.out.print("Chute um numero [1,10]: ");
+			chute = leia.nextInt();
+		} while (!numeroValido(1, 10, chute));
+
+		
+		while (!jogo.valida(chute) && jogo.pontuacao()>0) {
+			
+			System.out.print("Errou, tente novamente (0 para dica): ");
+			
+			do {
+				op = leia.nextInt();
+			} while (!numeroValido(0, 10, op));
+			
+			if (op == 0) {
+			
+				jogo.mostraDica(chute);
+				
+				do {
+					System.out.print("Tente novamente [1,10]: ");
+					chute = leia.nextInt();
+				} while (!numeroValido(1, 10, chute));
+
+			} else {
+				chute = op;
+			}	
+		}
+		
+		System.out.println("\n*****");
+		
+		if (jogo.pontuacao()>0)
+			System.out.println("PARAB�NS, acertou!");
+		else 
+			System.out.println("GAME OVER!");
+		
+		System.out.println("Pontuacao   : " + jogo.pontuacao());
+		System.out.println("Tentativa(s): " + jogo.tentativa());
+	}
+	
+	public static boolean numeroValido(int a, int b, int num){
+		
+		if (num>=a && num<=b)
+			return true;
+
+		System.out.println("[n�mero inv�lido]");
+		return false;
+	}
+}
