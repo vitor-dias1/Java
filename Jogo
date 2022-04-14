@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Principal {
+
+  public static void main(String[] args ) {
+
+   Controle jogo = new Controle();
+   Scanner leia = new Scanner (System.in);
+   int chute;
+ 
+   jogo.inicializa(); 
+ 
+ do {
+	 
+    if(jogo.tentativa()==0)
+    	System.out.print("Chute um numero: ");
+    else
+        System.out.print("Errou, temte novamente: ");
+     
+     chute = leia.nextInt();
+  
+ }while(!jogo.check(chute));
+
+    System.out.println("Parabens, acertou");
+    System.out.println("Pontuacao : " + jogo.pontuacao());
+    System.out.println("Tentativa(s): " + jogo.tentativa());    
+}
