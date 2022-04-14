@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class NotasP {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		NotasP medias = new NotasP();
+		
+		Scanner leia= new Scanner(System.in);
+		int a,cont = 0;
+		float nota, media = 0; 
+		float[] vet = new float[10];
+		int aluno;
+		
+		for(a = 0; a < 10; a++) {
+			System.out.print("Digite a nota: ");
+			nota = leia.nextFloat();
+			vet[a] = nota;
+			media = media + nota;
+		}
+		
+		media = medias.mediaSimples(media);
+		
+		for (a = 0; a < 10; a++) {
+			if (vet[a] >= media) {
+				cont++;		
+			}
+		}
+		
+		System.out.println("Notas acima de "+ media+ " = "+ cont);
+		
+		System.out.println("\nA nostas sao: ");
+		for (a = 0; a < 10; a++) {
+			if (vet[a] >= media) {
+				System.out.print(vet[a] + ", ");
+			
+			}
+		}	
+		System.out.println("\nDos seguintes alunos: ");
+		for (a = 0; a < 10; a++) {
+			aluno = a+1;
+			if (vet[a] >= media) {	
+				System.out.print("Aluno "+ aluno + ". ");
+			}
+		}	
+		}
