@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Aprovado_ou_Reprovados_V2 {
+	
+	public static void main(String[] args) {
+			Scanner entrada = new Scanner(System.in);
+			float a;
+			float b;
+			System.out.println("Digite sua primeira nota");
+			 a = entrada.nextFloat();
+		    System.out.println("Digite sua segunda nota ");
+		     b = entrada.nextFloat();
+
+		
+		
+		float media = (a+b)/2;
+		System.out.println("sua Media = " + media );
+		if ( media < 3)
+			System.out.println(" Voce Foi Reprovado Estude Mais da Proxima Vez...");
+		if (media >=3 && media<6)
+			System.out.println(" Voce tera oportunidade de fazer o Exame.");
+		if (media >=6)
+			System.out.println(" Voce foi Aprovado!!!");
+	}	
+}
