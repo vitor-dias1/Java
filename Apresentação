@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class OlaMundo {
+
+	public static void main(String[] args) {
+	
+	Scanner entrada = new Scanner(System.in); //
+		
+	int idade; //variavel x:inteiro
+	
+	idade = 20;
+	
+	System.out.print("Digite sua idade !!");	
+	idade = entrada.nextInt();
+	 	
+	System.out.println("Ola mundo!!");	
+	System.out.println("Tenho " + idade + " anos");
+
+	}
+
+}
