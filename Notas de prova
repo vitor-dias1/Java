@@ -44,3 +44,8 @@ public class NotasP {
 			}
 		}	
 		}
+		public float mediaSimples(float a) {
+		
+		return (a)/10;
+	}
+}
